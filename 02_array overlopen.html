@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les 7 JavaScript opdracht_array overlopen</title>
+
+</head>
+<!--                                 
+        Vraag aan de gebruiker hoeveel automerken hij wil ingeven. Deze moeten bijgehouden worden in een array.
+
+        Vraag vervolgens via een herhalingslus de verschillende merken. Bv. :
+
+
+
+        Als alle merken opgevraagd zijn, toon je deze met een tweede herhalingslus, op volgende wijze:
+
+                 
+-->
+
+<body>
+    <script type="text/javascript">
+
+        let aantal = prompt("Geeft aan hoeveel merken u wilt aangeven:"); // Vraag aan de gebruiker hoeveel automerken hij wil ingeven
+        let merken = new Array;// Maakt een array
+
+        if (aantal == null) {//Controleer of hij annuleert
+            alert("U heeft geannulleerd!");
+        }
+        else if (aantal.trim().length === 0) {//Controleer of hij iets ingegeven heeft
+            // Controleer of hij niets ingegeven heeft door op spatie balk te klikken
+            alert("U heeft niets ingegeven!");
+        }
+        else if (isNaN(aantal)) {
+            alert("Dit is geen nummer!");//Controleer of hij een getal ingegeven heeft
+        }
+        else {
+
+            for (let lus = 0; lus < aantal; lus++) { // herhaalingslus binnen de range van vraag
+                let namen = prompt(`Geef merk nr ${lus+1} in`);// variable om naam op te vangen
+                merken[lus] = namen;// slat de variable op  in de array 
+            }
+            
+            for (let lus = 0; lus < merken.length +1; lus++) { // herhaalingslus binnen de range van array lengte + beginnende zin
+                if (lus ==0) {
+                    document.write(`<p>Uw gaf volgende merken in:</p>`); // toon beginnende zin
+                    
+                } else {
+                    document.write(`<p>${lus }: ${merken[lus-1]}</p>`);  // toon alle gegeven merken
+                }
+                
+            }
+
+        }
+    </script>
+
+
+</body>
+
+</html>

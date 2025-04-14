@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les 6 JavaScript opdracht: grad</title>
+
+</head>
+<!--
+                Vraag aan de gebruiker om het aantal punten in te geven met 2 cijfers.
+                Controleer of hij annuleert: U heeft geannulleerd!
+                Controleer of hij iets ingegeven heeft: U heeft niets ingegeven!
+                Controleer of hij een getal ingegeven heeft: Dit is geen nummer!
+                Controleer of het getal uit 2 cijfers bestaat of eventueel 100 is: Geef de punten in met 2 cijfers!
+                Indien alles ok is, dus binnen de laatste else, dan controleer je de punten en geef je een melding:
+                Indien de punten groter of gelijk aan 95 zijn: De graad is: A+
+                Indien de punten groter of gelijk aan 90 zijn: De graad is: A
+                Indien de punten groter of gelijk aan 80 zijn: De graad is: B
+                Indien de punten groter of gelijk aan 70 zijn: De graad is: C
+                Indien de punten groter of gelijk aan 60 zijn: De graad is: D
+                Indien de punten groter of gelijk aan 50 zijn: De graad is: E
+                Anders: De graad is: F
+                 
+-->
+
+<body>
+    <script type="text/javascript">
+        let punten = prompt("Geeft aan  hoeveel punten(tussen 10 en 99) je hebt: ");
+
+        if (punten == null) {//Controleer of hij annuleert
+            alert("U heeft geannulleerd!");
+        }
+        else if ( punten.trim().length === 0) {//Controleer of hij iets ingegeven heeft
+                                                                    // Controleer of hij niets ingegeven heeft door op spatie balk te klikken
+            alert("U heeft niets ingegeven!");
+        }
+        else if (isNaN(punten) || punten.indexOf(".") == 0 || punten.indexOf(".") == 1)   {
+            //Controleer of hij een getal ingegeven heeft
+            // NaN  zijn geen nummers ( voorbeeld: 12 jk,j45.l"><-+23)
+            //.3 of 3. is ook geen nummer
+            alert("Dit is geen nummer!");
+        }
+        else {
+            if (punten.length == 2  || punten == 100) { //Controleer of het getal uit 2 cijfers bestaat of eventueel 100 is 
+
+                if (parseInt(punten) >= 95) {// punten groter of gelijk aan 95
+                    alert("De graad is: A+");// resultaat: De graad is: A+
+                }
+                else if (parseInt(punten) >= 90) {//punten groter of gelijk aan 90
+                    alert("De graad is: A");// resultaat: De graad is: A   
+                }
+                else if (parseInt(punten) >= 80) {//punten groter of gelijk aan 80
+                    alert("De graad is: B");// resultaat: De graad is: B    
+                }
+                else if (parseInt(punten) >= 70) {//punten groter of gelijk aan 70
+                    alert("De graad is: C");// resultaat: De graad is: C
+                }
+                else if (parseInt(punten) >= 60) {//punten groter of gelijk aan 60
+                    alert("De graad is: D");// resultaat: De graad is:      
+                }
+                else if (parseInt(punten) >= 50) {//punten groter of gelijk aan 50
+                    alert("De graad is: E");// resultaat: De graad is: E   
+                }
+                else {//punten onder 50
+                    alert("De graad is: F");// resultaat: De graad is: F
+                    
+                }
+            }
+            else {
+                alert("Geef de punten in met 2 cijfers!");
+
+            }
+
+        }
+    </script>
+
+
+</body>
+
+</html>

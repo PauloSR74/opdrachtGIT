@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les 6 JavaScript opdracht: hoursstip</title>
+
+</head>
+<!--
+          Vraag op wat het huidige uur is volgens de klok van de computer. Zoek op hoe je dit opvraagt met JavaScript.
+
+            Afhankelijk van dit uur geeft je een melding:
+
+            Is het uur
+
+            groter dan 0 t.e.m. 7 : Goeienacht
+            groter dan 7 t.e.m. 11: Goeiemorgen
+            groter dan 11 t.e.m. 18: Goeiemiddag
+            groter dan 18: Goeie avond
+            Werk met if else if’s.
+
+            Resultaat op het scherm:
+            Het is nu 21 uur.
+            Goeie avond      
+                 
+-->
+
+<body>
+    <script type="text/javascript">
+
+        let now = new Date();// datum waar uur in zit 
+        let hours = now.getHours(); //Vraag op wat het huidige uur is volgens de klok van de computer
+        let resultaat = "";// variable initialiseren
+
+
+
+        if (hours <= 7) { //uur groter dan 0 t.e.m. 7
+            resultaat = "Goeienacht"; //Resultaat definieren
+        }
+        else if (hours <= 11) { //uur groter dan 7 t.e.m. 11
+            resultaat = "Goeiemorgen"; //Resultaat definieren
+        }
+        else if (hours <= 18) { //uur groter dan 11 t.e.m. 18
+            resultaat = "Goeiemiddag"; //Resultaat definieren
+        }
+        else { //uur groter dan 18
+            resultaat = "Goeie avond";//Resultaat definieren
+        }
+
+        document.write(`<p>Het is nu ${hours} uur.</p>
+                <p>${resultaat}. </p>`) //Resultaat op het scherm
+
+    </script>
+
+
+</body>
+
+</html>
